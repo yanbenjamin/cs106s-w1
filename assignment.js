@@ -34,7 +34,7 @@ let alphabet = Object.keys(mapping);
  *  > (int) the corresponding index 
  */
 function letterToIndex(letter){
-    // TODO: complete this function
+    return mapping[letter];
 }
 
 /**
@@ -49,7 +49,7 @@ function letterToIndex(letter){
  *  > (string) the letter
  */
 function indexToLetter(index){
-    // TODO: complete this function
+    return alphabet[index % 26]; // % is used for wrapping around numbers above 25
 }
 
 /**
@@ -64,7 +64,10 @@ function indexToLetter(index){
  *  > (string) the shifted letter
  */
 function shiftLetter(original, shift){
-    // TODO: complete this function
+    // original letter -> original index -> shifted index -> shifted letter
+    let originalIndex =  letterToIndex(original);
+    let shiftedIndex = originalIndex + shift;
+    return indexToLetter(shiftedIndex);
 }
 
 /**
@@ -79,7 +82,12 @@ function shiftLetter(original, shift){
  *  > (string) the encrpyted string
  */
 function encryptCaesar(original, shift){
-    // TODO: complete this function
+    let encrypted = "";
+    for (let i = 0; i < original.length; i++){
+        //iterate through each letter in original, shift it, add it to the new string
+        encrypted += shiftLetter(original[i], shift);
+    }
+    return encrypted;
 }
 
 /** OPTIONAL EXTENSION -- We won't get to this in class!
@@ -94,7 +102,14 @@ function encryptCaesar(original, shift){
  *  > (string) the encrpyted string
  */
 function encryptVigenere(original, keyword){
-    // optional TODO: complete this function
+    let encrypted = "";
+    for (let i = 0; i < original.length; i++){
+        //determine shift value from remainder index in keyword
+        let shift = letterToIndex(keyword[i % keyword.length]);
+        //shift the ith letter as such and add it to output string 
+        encrypted += shiftLetter(original[i], shift);
+    }
+    return encrypted;
 }
 
 /* No need to modify anything beyond this point :) */
@@ -193,4 +208,4 @@ function testVigenere(){
 }
 
 testCaesar();
-// testVigenere() // -- uncomment to test Vigenere cipher (optional)
+// testVigenere(); // -- uncomment to test Vigenere cipher (optional)
