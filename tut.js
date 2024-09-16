@@ -121,6 +121,8 @@ wordFragments.join(","); // => "my,hero,academia" (string)
 let myString = "syzygy"; //yes, this is an English word
 myString[1]; // => y
 myString[2]; // => z
+//'length' is a property of string; be careful not to write .length()
+myString.length; // => 6
 
 //strings are immutable, cannot change object once declared 
 myString[0] = "a"; // "syzygy", does nothing! 
@@ -130,8 +132,6 @@ myString[0] = "a"; // "syzygy", does nothing!
 myString += "!"; // "syzygy!", new string! 
 myString = myString + "!" // "syzygy!!"
 
-//'length' is a property of string; be careful not to write .length()
-myString.length; // => 8, includes the two '!' marks
 
 // Loops! standard 'for' loops are similar to C++/Java
 function sayHelloThereNTimes(N){
