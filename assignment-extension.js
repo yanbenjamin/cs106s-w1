@@ -87,8 +87,11 @@ function shiftLetter(original, shift){
 function encryptCaesar(original, shift){
     let encrypted = "";
     for (let char of original){
-        // iterate through each letter in original, shift it, add it to the new string
-        encrypted += shiftLetter(char, shift);
+        if (char in mapping){ // is an alphabet letter
+            encrypted += shiftLetter(char, shift);
+        } else{ // spacing, punctuation, etc. 
+            encrypted += char;
+        }
     }
     return encrypted;
 }
@@ -106,7 +109,25 @@ function encryptCaesar(original, shift){
  *  > (string) the encrpyted string
  */
 function encryptVigenere(original, keyword){
-    // optional TODO: complete this function
+    let encrypted = "";
+    let keywordIndex = 0;
+    for (let char of original){
+        if (char in mapping){ // is alphabet letter
+            // determine shift value from keyword index
+            let shift = letterToIndex(keyword[keywordIndex]);
+
+            // shift the ith letter as such and add it to output string 
+            encrypted += shiftLetter(char, shift);
+
+            // increment keyword index, resetting to 0 if it reaches keyword length
+            keywordIndex++;
+            if (keywordIndex === keyword.length) keywordIndex = 0;
+        
+        } else{ // is spacing, punctuation, etc.
+            encrypted += char;
+        }
+    }
+    return encrypted;
 }
 
 
@@ -127,7 +148,10 @@ function encryptVigenere(original, keyword){
  *  > None
  */
 function breakCaesar(ciphertext){
-    // optional TODO: complete this function
+    for (let shift = 0; shift < 26; shift++){
+        // print out what the decrypted string would be for that shift
+        console.log(shift, decryptCaesar(ciphertext, shift));
+    } 
 }
 
 
@@ -227,4 +251,4 @@ function testVigenere(){
 }
 
 testCaesar();
-// testVigenere(); // -- uncomment to test Vigenere cipher (optional)
+testVigenere() // -- uncomment to test Vigenere cipher (optional)
