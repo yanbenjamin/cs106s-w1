@@ -34,7 +34,7 @@ let alphabet = Object.keys(mapping);
  *  > (int) the corresponding index 
  */
 function letterToIndex(letter){
-    return mapping[letter];
+    // TODO: complete this function
 }
 
 
@@ -50,7 +50,7 @@ function letterToIndex(letter){
  *  > (string) the letter
  */
 function indexToLetter(index){
-    return alphabet[index % 26]; // % is used for wrapping around numbers above 25
+    // TODO: complete this function
 }
 
 
@@ -66,10 +66,7 @@ function indexToLetter(index){
  *  > (string) the shifted letter
  */
 function shiftLetter(original, shift){
-    // original letter -> original index -> shifted index -> shifted letter
-    let originalIndex =  letterToIndex(original);
-    let shiftedIndex = originalIndex + shift;
-    return indexToLetter(shiftedIndex);
+    // TODO: complete this function
 }
 
 
@@ -85,12 +82,7 @@ function shiftLetter(original, shift){
  *  > (string) the encrpyted string
  */
 function encryptCaesar(original, shift){
-    let encrypted = "";
-    for (let i = 0; i < original.length; i++){
-        //iterate through each letter in original, shift it, add it to the new string
-        encrypted += shiftLetter(original[i], shift);
-    }
-    return encrypted;
+    // TODO: complete this function
 }
 
 
@@ -106,14 +98,7 @@ function encryptCaesar(original, shift){
  *  > (string) the encrpyted string
  */
 function encryptVigenere(original, keyword){
-    let encrypted = "";
-    for (let i = 0; i < original.length; i++){
-        //determine shift value from remainder index in keyword
-        let shift = letterToIndex(keyword[i % keyword.length]);
-        //shift the ith letter as such and add it to output string 
-        encrypted += shiftLetter(original[i], shift);
-    }
-    return encrypted;
+    // optional TODO: complete this function
 }
 
 
