@@ -34,7 +34,7 @@ const CS106S_UNITS = 1; // 1-unit wonder!
 const LITERS_IN_A_GALLON = 3.785;
 
 /* in older JS code, you'll often see 'var' keyword for variables.
-as a general principle, AVOID USING IT.*/
+as a general principle, avoid using it*/
 var totalUnits = 17; 
 
 /* extra: if you're curious on the main difference, while 'let' variables are only 
@@ -67,9 +67,9 @@ function celsiusToFahrenheit(celsius){
  && is logical AND, || is logical OR, ! is logical NOT
  <, <=, >, and >= operate as mathematically expected */
 
-3 === 3 // => true (boolean)
-3 < Math.PI // => true (boolean)
-0.999 === 1 // => false (boolean)
+3 === 3 // => true
+3 < Math.PI // => true
+0.999 === 1 // => false
 
 // example function to showcase if / else if / else logic in JavaScript 
 function Goldilocks(fahrenheit){
@@ -98,7 +98,7 @@ let numStudents = { // from last time I checked ExploreCourses this winter
     "cs106A": 500,
     "cs106B": 439,
     "cs107": 252,
-}; 
+};
 
 // use bracket notation to lookup values (from their keys) 
 numStudents["cs106a"] // => 500
@@ -106,7 +106,6 @@ numStudents["cs107"] // => 252
 
 // can also set new key-value pairs!
 numStudents["cs109"] = 283;
-
 // or modify the value for an existing key
 numStudents["cs103"] += 50; // new students! 
 
@@ -179,7 +178,7 @@ name += "!!"; //"percy jackson!!", more sass now
 
 // Loops! standard 'for' loops are similar to C++/Java
 function sayHelloWorld(numTimes){
-	//loop runs N times (i = 0,1,2,...,N-1)
+     //loop runs N times (i = 0,1,2,...,N-1)
     for (let i = 0; i < N; i++){
         console.log("Hello World!");
     }
@@ -204,9 +203,8 @@ function getSumV2(array){ // alternative to above
     return sum;
 }
      
-
-/* as characters in a string are also indexed by integers (0,1,2,...,
-   str.length-1), we can conveniently use for loops to iterate over them! */
+/* back to strings! as characters in a string are also indexed by integers (0,1,2,
+  ..., str.length-1), we can conveniently use for loops to iterate over them! */
 function printEachChar(str){
     for (let i = 0; i < str.length; i++){
         console.log(str[i]); // ith character
