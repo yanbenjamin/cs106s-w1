@@ -158,10 +158,10 @@ function decryptVigenere(ciphertext, keyword){
 function runUnitTest(func, args, expected_output){
     let output = func.apply(null, args);
     if (expected_output == output){
-        console.log(func.name + "(" + args + ") => " + output + ". PASSED!");
+        console.log("✅ " + func.name + "(" + args + ") => " + output + ". PASSED!");
         return 0;
     }
-    console.log(func.name + "(" + args + ") => " + output + ". Expected Output: " + expected_output); 
+    console.log("❌ " + func.name + "(" + args + ") => " + output + ". Expected Output: " + expected_output); 
     return -1; 
 }
 
