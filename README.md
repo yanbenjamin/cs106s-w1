@@ -11,6 +11,8 @@
 ## Intro Cryptography
 This workshop will introduce you with the basics of crytographic ciphers, which are widely used for keeping data secure and veiling sensitive information, such as passwords, identifying information, personal communications, digital signatures, and much more! 
 
+You're welcome and encouraged to work through this in pairs or groups!
+
 ## Caesar Ciphers (`assignment.js`)
 Caesar ciphers work by shifting each character in a certain message we'd like to encrypt, which we call the "plaintext". The mechanism is that each character is shifted by the same number of characters; for instance, if our shift length is `1`, then `a` shifts to `b`, `b` shifts to `c`, `c` to `d`, and so forth, with `z` to `a` so that letters at the alphabet's end wrap around back to the beginning.
 
@@ -21,6 +23,8 @@ The diagram below illustrates encrypting message `"roman"` with a shift length o
 **For this endeavor, you can make the following assumptions:** (1) all text / strings will be of non-zero length, (2) all given alphabetic characters wil be lowercase, and (3) the cipher is not applied to non-alphabetic characters, and you will not encounter them. 
 
 **To help check functionality**, after completing `TODO` functions, refresh the Chrome tab on `index.html` and check the Console to see if our sanity-check tests pass or not. Please let me know if you have any questions!
+
+If you're done early, feel free to have fun at <a href = "https://www.coolmathgames.com/" target="_blank" rel="noopener noreferrer">https://www.coolmathgames.com/</a>! (personal favorite game is *Fireboy and Watergirl*—to play this one, find someone nearby / at your table and team up!) I'd recommend this actually as it's Week 1, and we're still easing into a new quarter; though if you'd like to do some more programming with ciphers, there's some optional extensions / challenges below! :)
 
 ## Optional Extension: Vigenère Ciphers (also `assignment.js`)
 **Completely optional:** Feel free to work on this if you'd like and have extra time in class! 
@@ -80,7 +84,7 @@ Below is a list of ciphers / cryptograms that appear in *Gravity Falls*. **For f
 | S2 EP7 | Vigènere | "mxngveecw mw slaww sul fpzsk mw sojmrx"|
 | S2 Finale | Vigènere | "glcoprp googwmj fxzwg" |
 
-As a tip, you'll find it useful to **adapt your `encryptCaesar` implementation to handle strings with potentially non-alphabetic characters (spaces, punctuation)**. Specifically, for any alphabet characters (`a,b,...,z`), you'll want to shift them as normal, but for non-alphabetic characters, you'll want to leave them unchanged, e.g., `"hello world!"`**→**`"jgnnq yqtnf!"`. You can still assume any letter that appears will be lowercase. **To check if a character `char` is alphabetic**, here you can use the alpahabet object `mapping` as follows:
+As a tip, you'll find it useful to **adapt your `shiftLetter` implementation to handle non-alphabetic characters (spaces, punctuation)**, which may be inside the strings you're encrypting/decrypting. Specifically, for any alphabet characters (`a,b,...,z`), you'll want to shift them as normal, but for non-alphabetic characters, you'll want to simply return them unchanged, e.g., `"!"`**→**`"!"`, `" "`**→**`" "`. You can still assume any letter that appears will be lowercase. **To check if a character `char` is alphabetic**, here you can use the alpahabet object `mapping` as follows:
 ```
 if (char in mapping){ // is a letter
   ...
