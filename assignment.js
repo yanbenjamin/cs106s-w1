@@ -118,7 +118,7 @@ function encryptVigenere(original, keyword){
  * Returns: 
  *  > None
  */
-function breakCaesar(original, keyword){
+function breakCaesar(ciphertext){
     // optional TODO: complete this function
 }
 
