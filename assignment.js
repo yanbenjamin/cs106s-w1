@@ -37,6 +37,7 @@ function letterToIndex(letter){
     // TODO: complete this function
 }
 
+
 /**
  * Function: indexToLetter
  * Takes index of a letter and returns the letter itself. Number >25 wrap around!
@@ -51,6 +52,7 @@ function letterToIndex(letter){
 function indexToLetter(index){
     // TODO: complete this function
 }
+
 
 /**
  * Function: shiftLetter
@@ -67,6 +69,7 @@ function shiftLetter(original, shift){
     // TODO: complete this function
 }
 
+
 /**
  * Function: encrpytCaesar
  * Encrpyts the given string using the Caesar cipher with the given shift length.
@@ -82,7 +85,8 @@ function encryptCaesar(original, shift){
     // TODO: complete this function
 }
 
-/** OPTIONAL EXTENSION -- We won't get to this in class!
+
+/** OPTIONAL EXTENSION
  * Function: encrpytVigenere
  * Encrypts the given string using the Vigenere cipher and the given keyword.
  * -------------
@@ -96,6 +100,28 @@ function encryptCaesar(original, shift){
 function encryptVigenere(original, keyword){
     // optional TODO: complete this function
 }
+
+
+/** OPTIONAL EXTENSION
+ * Function: breakCaesar
+ * 
+ * Decodes an encrypted message by logging out all possibilities. Specifically, 
+ * loops over all possible Caesar shifts from +0 to +25, inclusive, and prints out
+ * what the decrypted string would be for each shift, making calls to the
+ * decryptCaesar(ciphertext, shift) function already written below. 
+ * 
+ * The print formatting is up to you; and to print, use console.log() in JavaScript! 
+ * -------------
+ * Params: 
+ *  > ciphertext (string) - the string you'd like to decode, of any length
+ * 
+ * Returns: 
+ *  > None
+ */
+function breakCaesar(original, keyword){
+    // optional TODO: complete this function
+}
+
 
 /* No need to modify anything beyond this point :) */
 
@@ -193,4 +219,4 @@ function testVigenere(){
 }
 
 testCaesar();
-// testVigenere() // -- uncomment to test Vigenere cipher (optional)
+//testVigenere() // -- uncomment to test Vigenere cipher (optional)

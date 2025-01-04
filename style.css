@@ -1,7 +1,7 @@
-*{ 
-    font-family: 'Courier New', monospace !important;
-} /* sets everything (*) on page to Courier New font */
+img{
+    border: dashed 5px;
+} /* adds dashed border with 5 pixel width */
 
 h2{
-    color: darkred;
-} /* sets section heading to a dark red color */
+    color: darkblue;
+} /* sets section heading to dark red color */
