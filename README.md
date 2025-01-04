@@ -49,12 +49,13 @@ Now that we can encrypt messages, we also want to know how to decrypt or **decod
 
 A helper function `decryptCaesar(ciphertext,shift)` is already written for you, great! It decodes an encrypted message `ciphertext`, but only with an already given Caesar `shift` between 0 and 25, inclusive. 
 
-In practice, we don't know what the shift is, but we do know it's an integer in `0,1,2,...,25`. There's only 26 possibilities, which isn't a whole lot! And with that mind, **complete the function `breakCaesar(ciphertext)`**, which should loop over every possible shift value, and print out what the decrypted string would be for each one, making calls to `decryptCaesar`. How you format the printing is up to you! This brute-force approach allows us to manually inspect all the possibilities, and see which one is likely correct, e.g., the one that contains valid English words. An example print out might look like, for `ciphertext = "cde"`,
+In practice, we don't know what the shift is, but we do know it's an integer in `0,1,2,...,25`. There's only 26 possibilities, which isn't a whole lot! And with that mind, **complete the function `breakCaesar(ciphertext)`**, which should loop over every possible shift value, and print out what the decrypted string would be for each one, making calls to `decryptCaesar`. How you format the printing is up to you! This brute-force approach allows us to manually inspect all the possibilities, and see which one is likely correct, e.g., the one that contains valid English words. An example print out might look like, for `ciphertext = "ectg"`,
 ```
-0 cde
-1 bcd
-2 abc
-3 zab
+0 ectg
+1 dbsf
+2 care
+3 bzqd
+4 aypc
 ...
 ```
 **Note**: In the sample print out above, the shifts go backward as we're decrypting, not encrypting!  
@@ -84,7 +85,7 @@ Below is a list of ciphers / cryptograms that appear in *Gravity Falls*. **For f
 | S2 EP7 | Vigènere | "mxngveecw mw slaww sul fpzsk mw sojmrx"|
 | S2 Finale | Vigènere | "glcoprp googwmj fxzwg" |
 
-As a tip, you'll find it useful to **adapt your `shiftLetter` implementation to handle non-alphabetic characters (spaces, punctuation)**, which may be inside the strings you're encrypting/decrypting. Specifically, for any alphabet characters (`a,b,...,z`), you'll want to shift them as normal, but for non-alphabetic characters, you'll want to simply return them unchanged, e.g., `"!"`**→**`"!"`, `" "`**→**`" "`. You can still assume any letter that appears will be lowercase. **To check if a character `char` is alphabetic**, here you can use the alpahabet object `mapping` as follows:
+As a tip, you'll find it useful to **adapt your `encryptCaesar` implementation to handle strings with non-alphabetic characters (spaces, punctuation)**. Specifically, for any alphabet characters (`a,b,...,z`), you'll want to shift them as normal, but for non-alphabetic characters, you'll want to simply leave them unchanged, e.g., `"hello world!"`**→**`jgnnq yqtnf!`. You can still assume any letter that appears will be lowercase. **To check if a character `char` is alphabetic**, here you can use the alpahabet object `mapping` as follows:
 ```
 if (char in mapping){ // is a letter
   ...
@@ -93,8 +94,8 @@ if (char in mapping){ // is a letter
 }
 ```
 Let me know if you have any questions on this!
-
-For the **Vigènere ciphers**, you'll want to use the `decryptVigenere(ciphertext, keyword)` function already written in `assignment.js`! For each cipher, the keyword will be among this word bank: `"cursed"`,`"erase"`,`"cipher"`,`"shifter"`, `"axolotl"`. 
+ 
+You'll also want to adapt `encryptVigenere` similarly if you've implemented it. And for decoding the **Vigènere ciphers**, you'll want to use the `decryptVigenere(ciphertext, keyword)` function already written in `assignment.js`! For each cipher, the keyword will be among this word bank: `"cursed"`,`"erase"`,`"cipher"`,`"shifter"`, `"axolotl"`. 
 
 ## Credit
 This workshop was built and rechiseled from previous iterations of the course: particular thanks to Miles McCain, and to Stanford Python for providing its inspiration!
