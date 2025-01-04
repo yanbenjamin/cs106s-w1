@@ -87,9 +87,11 @@ function shiftLetter(original, shift){
 function encryptCaesar(original, shift){
     let encrypted = "";
     for (let char of original){
-        if (char in mapping){ // is an alphabet letter
+        if (char in mapping){ 
+            // is an alphabet letter, so shift it
             encrypted += shiftLetter(char, shift);
-        } else{ // spacing, punctuation, etc. 
+
+        } else{ // spacing, punctuation, etc. (leave them unchanged)
             encrypted += char;
         }
     }
@@ -113,17 +115,15 @@ function encryptVigenere(original, keyword){
     let keywordIndex = 0;
     for (let char of original){
         if (char in mapping){ // is alphabet letter
-            // determine shift value from keyword index
+            // determine shift value from keyword index, and shift letter
             let shift = letterToIndex(keyword[keywordIndex]);
-
-            // shift the ith letter as such and add it to output string 
             encrypted += shiftLetter(char, shift);
 
             // increment keyword index, resetting to 0 if it reaches keyword length
             keywordIndex++;
             if (keywordIndex === keyword.length) keywordIndex = 0;
-        
-        } else{ // is spacing, punctuation, etc.
+
+        } else{ // is spacing, punctuation, etc. (leave them unchanged)
             encrypted += char;
         }
     }
