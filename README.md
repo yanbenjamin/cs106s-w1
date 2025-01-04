@@ -60,6 +60,11 @@ In practice, we don't know what the shift is, but we do know it's an integer in 
 ## Optional Extension: For fun, decrypt some fun messages in Gravity Falls! 🏕️🌌
 The animated TV series *Gravity Falls* 🌲🌲 (2012-2016) was an endearing fan-favorite on the Disney channel, known for its mischief humor, voice acting, supernatural mystery themes, and, very relevant to us, the ciphers it placed in the end credits for each episode. Most of them were Caesar or Vigènere ciphers! And sometimes, they subtly foreshadowed major events and twists—leading all the way up to the main antagonist, a ruthless dream demon whose name, no kidding, is Bill Cipher. Scary stuff.
 
+<p float="left">
+<img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*i1wUMam8Rgkq-XMwmu7YlA.png" alt="Gravity Falls image" height="150">
+<img src="https://i0.wp.com/www.michigandaily.com/wp-content/uploads/2024/09/isabelle-gravity-falls-e1727374295284.png?w=845&ssl=1" alt="Gravity Falls image 2" height="150">
+</p>
+
 Below is a list of ciphers / cryptograms that appear in *Gravity Falls*. **For fun and to defeat Bill Cipher, with the decryption method you wrote above, try to crack as many ciphers as you can!** (I promise no spoilers).
 
 | Episode | Cipher Type    | Cryptogram    |
@@ -75,7 +80,7 @@ Below is a list of ciphers / cryptograms that appear in *Gravity Falls*. **For f
 | S2 EP7 | Vigènere | "mxngveecw mw slaww sul fpzsk mw sojmrx"|
 | S2 Finale | Vigènere | "glcoprp googwmj fxzwg" |
 
-As a tip, you'll find it useful to **adapt your `encryptCaesar` implementation to handle strings with potentially non-alphabetic characters (spaces, punctuation)**. Specifically, for any alphabet characters (`a,b,...,z`), you'll want to shift them as normal, but for non-alphabetic characters, you'll want to leave them unchanged, e.g., **"hello world!"→"jgnnq yqtnf!"**. You can still assume any letter that appears will be lowercase. Let me know if you have any questions!
+As a tip, you'll find it useful to **adapt your `encryptCaesar` implementation to handle strings with potentially non-alphabetic characters (spaces, punctuation)**. Specifically, for any alphabet characters (`a,b,...,z`), you'll want to shift them as normal, but for non-alphabetic characters, you'll want to leave them unchanged, e.g., `"hello world!"`**→**`"jgnnq yqtnf!"`. You can still assume any letter that appears will be lowercase. Let me know if you have any questions!
 
 For the **Vigènere ciphers**, you'll want to use the `decryptVigenere(ciphertext, keyword)` function already written in `assignment.js`! For each cipher, the keyword will be among this word bank: `"cursed"`,`"erase"`,`"cipher"`,`"shifter"`, `"axolotl"`. 
 
